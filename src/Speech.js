@@ -29,6 +29,16 @@ class Speech extends Component {
     }, this.handleListen)
   }
 
+  searchBook(text){
+    fetch(' https://www.goodreads.com/search/index.xml/?key='+MyvMg1524Tr2VzZyAcFeA+',q='+text)
+    .then((results)=>{
+      console.log(results);
+    })
+  }
+
+  //key: MyvMg1524Tr2VzZyAcFeA
+  //secret: SfNYHH77tcS2N0SGGWUsNMwmpQ8YwV4A3rWW71a2MZU
+
   handleListen() {
 
     console.log('listening?', this.state.listening)
@@ -63,9 +73,6 @@ class Speech extends Component {
       document.getElementById('interim').innerHTML = interimTranscript
       document.getElementById('final').innerHTML = finalTranscript
 
-
-        //key: MyvMg1524Tr2VzZyAcFeA
-        //secret: SfNYHH77tcS2N0SGGWUsNMwmpQ8YwV4A3rWW71a2MZU
 
     //-------------------------COMMANDS------------------------------------
 
