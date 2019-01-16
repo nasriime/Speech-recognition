@@ -30,10 +30,32 @@ class Speech extends Component {
   }
 
   searchBook(text){
-    fetch(' https://www.goodreads.com/search/index.xml/?key='+MyvMg1524Tr2VzZyAcFeA+',q='+text)
+    let url = ' https://www.goodreads.com/search/index.xml?key=MyvMg1524Tr2VzZyAcFeA&q='+text;
+    // let params = {
+    //    q : "select * from xml where url=\""+url+"\"",
+    //    format: "json"
+    // }
+
+    // axios.get('/api', {
+    //   params: {
+    //     foo: 'bar'
+    //   }
+    // });
+    
+    // fetch('http://query.yahooapis.com/v1/public/yql?q='+params.q+'&format=params.format')
+    fetch(url,{
+      method: 'GET',
+      // headers:{
+      //   'Content-Type': 'application/json'
+      // }
+    })
     .then((results)=>{
       console.log(results);
     })
+  }
+
+  componentDidMount(){
+    this.searchBook('football');
   }
 
   //key: MyvMg1524Tr2VzZyAcFeA
@@ -72,7 +94,7 @@ class Speech extends Component {
       }
       document.getElementById('interim').innerHTML = interimTranscript
       document.getElementById('final').innerHTML = finalTranscript
-
+      this.searchBook(finalTranscript);
 
     //-------------------------COMMANDS------------------------------------
 
