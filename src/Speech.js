@@ -63,6 +63,10 @@ class Speech extends Component {
       document.getElementById('interim').innerHTML = interimTranscript
       document.getElementById('final').innerHTML = finalTranscript
 
+
+        //key: MyvMg1524Tr2VzZyAcFeA
+        //secret: SfNYHH77tcS2N0SGGWUsNMwmpQ8YwV4A3rWW71a2MZU
+
     //-------------------------COMMANDS------------------------------------
 
       const transcriptArr = finalTranscript.split(' ')
